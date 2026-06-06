@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& .\\\\.venv\\\\Scripts\\\\python.exe make_results_report.py; if \\($?\\) { & .\\\\.venv\\\\Scripts\\\\python.exe make_results_pptx.py }; Write-Output \"--- fichiers ---\"; Get-ChildItem resultats_tipe.pdf, Resultats_TIPE_13530.pptx -ErrorAction SilentlyContinue | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB\\)}} | Format-Table -AutoSize)"
+    ]
+  }
+}

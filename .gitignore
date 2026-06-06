@@ -1,0 +1,13 @@
+# Environnement virtuel Python (ne pas versionner : recree avec requirements.txt)
+.venv/
+venv/
+env/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers systeme
+Thumbs.db
+.DS_Store
