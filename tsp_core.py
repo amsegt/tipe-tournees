@@ -13,7 +13,7 @@ Contient :
 
 Ce module est importe par step2_solve.py. Il ne fait AUCUN acces reseau.
 """
-from itertools import permutations
+from itertools import permutations, combinations
 import csv
 import math
 
@@ -128,22 +128,20 @@ def held_karp(D):
     n = len(D)
     C = {}
     for j in range(1, n):
-        C[(1 << j, j)] = (D[0][j], 0)
+        C[(frozenset([j]), j)] = (D[0][j], 0)
     for size in range(2, n):
-        for subset in _subsets(range(1, n), size):
-            bits = 0
-            for k in subset:
-                bits |= 1 << k
+        for subset in combinations(range(1, n), size):
+            S = frozenset(subset)
             for j in subset:
-                prev = bits & ~(1 << j)
-                C[(bits, j)] = min((C[(prev, i)][0] + D[i][j], i)
-                                   for i in subset if i != j)
-    full = (1 << n) - 2
+                prev = S - {j}
+                C[(S, j)] = min((C[(prev, i)][0] + D[i][j], i)
+                                for i in subset if i != j)
+    full = frozenset(range(1, n))
     cost, parent = min((C[(full, j)][0] + D[j][0], j) for j in range(1, n))
-    tour, bits, j = [0], full, parent
+    tour, S, j = [0], full, parent
     for _ in range(n - 1):
         tour.append(j)
-        bits, j = bits & ~(1 << j), C[(bits, j)][1]
+        S, j = S - {j}, C[(S, j)][1]
     return tour[::-1], cost
 
 
