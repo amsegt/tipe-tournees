@@ -1,0 +1,24 @@
+{
+  "n_points": 43,
+  "radius_m": 1421.1,
+  "nodes": 2542,
+  "edges": 7257,
+  "nodes_removed_not_strongly_connected": 13,
+  "download_seconds": 3.0,
+  "snap_max_m": 89.54,
+  "snap_mean_m": 15.14,
+  "unreachable_pairs": 0,
+  "mean_travel_time_s_asym": 77.71,
+  "asym_diff_max_s": 32.33,
+  "asym_diff_mean_s": 3.48,
+  "hwy_speeds_kmh": {
+    "residential": 30,
+    "living_street": 20,
+    "tertiary": 40,
+    "secondary": 50,
+    "primary": 60,
+    "trunk": 70
+  },
+  "fallback_speed_kmh": 30,
+  "buffer_m": 600
+}

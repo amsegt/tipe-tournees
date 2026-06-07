@@ -1,0 +1,4 @@
+methode,temps_hypo_s,temps_osm_s,ratio_osm_sur_hypo,meme_ordre_visite
+Plus proche voisin (depart 0),1091.78,1039.66,0.952,False
+Plus proche voisin (meilleur depart),986.23,964.83,0.978,False
+2-opt (sur meilleur PPV),802.60,883.17,1.100,False

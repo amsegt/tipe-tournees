@@ -11,3 +11,6 @@ __pycache__/
 # Fichiers systeme
 Thumbs.db
 .DS_Store
+
+# Cache HTTP d'OSMnx (reponses Overpass) : le reseau reproductible est road_graph.graphml
+cache/
